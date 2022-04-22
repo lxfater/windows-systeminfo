@@ -1,6 +1,6 @@
-const { parseString } = require('@fast-csv/parse');
-const { execFileSync } = require("child_process");
-module.exports = function getWindowsSystemInfo() {
+import { parseString } from '@fast-csv/parse';
+import { execFileSync } from "child_process";
+export default function getWindowsSystemInfo() {
     function exec(command: string) {
        const result = execFileSync('cmd', [`/C chcp 65001>nul && ${command}`], {
             windowsHide: true
