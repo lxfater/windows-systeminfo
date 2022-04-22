@@ -1,0 +1,29 @@
+{
+  "name": "windows-systeminfo",
+  "version": "1.0.0",
+  "description": "A nodejs wrapper for native windows systemInfo command.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc index.ts -t es6 -m commonjs",
+    "test": "node ./test.js"
+  },
+  "type": "commonjs",
+  "keywords": [
+    "windows",
+    "systemInfo"
+  ],
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxfater/windows-systeminfo.git"
+  },
+  "author": "lxfater",
+  "license": "MIT",
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6"
+    
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3",
+    "@types/node": "^17.0.25",
+  }
+}
