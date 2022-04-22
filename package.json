@@ -1,6 +1,6 @@
 {
   "name": "@lxfater/windows-systeminfo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A nodejs wrapper for native windows systemInfo command.",
   "main": "main.js",
   "scripts": {
