@@ -1,10 +1,10 @@
 {
-  "name": "windows-systeminfo",
+  "name": "@lxfater/windows-systeminfo",
   "version": "1.0.0",
   "description": "A nodejs wrapper for native windows systemInfo command.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "build": "npx tsc index.ts -t es6 -m commonjs",
+    "build": "npx tsc main.ts -t es6 -m commonjs",
     "test": "node ./test.js"
   },
   "type": "commonjs",
