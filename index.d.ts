@@ -1,1 +1,1 @@
-export default function getWindowsSystemInfo(): Promise<unknown>;
+export default function getWindowsSystemInfo(encoding?: string): Promise<unknown>;

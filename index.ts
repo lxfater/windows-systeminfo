@@ -1,11 +1,15 @@
 import { parseString } from '@fast-csv/parse';
 import { execFileSync } from "child_process";
-export default function getWindowsSystemInfo() {
+import iconv from "iconv-lite";
+export default function getWindowsSystemInfo(encoding = 'cp936') {
     function exec(command: string) {
-       const result = execFileSync('cmd', [`/C chcp 65001>nul && ${command}`], {
+        function iconvDecode(buffer: Buffer) {
+            return iconv.decode(buffer, encoding);
+        }
+        const result = execFileSync('cmd', [`/C ${command}`], {
             windowsHide: true
         })
-        return result.toString()
+        return iconvDecode(result)
     }
     return new Promise((resolve, reject) => {
         try {
@@ -21,5 +25,4 @@ export default function getWindowsSystemInfo() {
 
     })
 }
-
 
