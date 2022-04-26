@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "Commonjs",
+    "target": "ES2022",
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": [
+    "./index.ts"
+  ]
+}

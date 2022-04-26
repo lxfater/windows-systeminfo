@@ -1,6 +1,6 @@
 import { parseString } from '@fast-csv/parse';
 import { execFileSync } from "child_process";
-import iconv from "iconv-lite";
+const iconv = require("iconv-lite");
 export default function getWindowsSystemInfo(encoding = 'cp936') {
     function exec(command: string) {
         function iconvDecode(buffer: Buffer) {
@@ -20,7 +20,7 @@ export default function getWindowsSystemInfo(encoding = 'cp936') {
                     resolve(data)
                 })
         } catch (error) {
-            console.error(error)
+            reject(error)
         }
 
     })

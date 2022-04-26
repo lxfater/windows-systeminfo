@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const parse_1 = require("@fast-csv/parse");
 const child_process_1 = require("child_process");
-const iconv_lite_1 = require("iconv-lite");
+const iconv = require("iconv-lite");
 function getWindowsSystemInfo(encoding = 'cp936') {
     function exec(command) {
         function iconvDecode(buffer) {
-            return iconv_lite_1.default.decode(buffer, encoding);
+            return iconv.decode(buffer, encoding);
         }
         const result = (0, child_process_1.execFileSync)('cmd', [`/C ${command}`], {
             windowsHide: true
@@ -23,7 +23,7 @@ function getWindowsSystemInfo(encoding = 'cp936') {
             });
         }
         catch (error) {
-            console.error(error);
+            reject(error);
         }
     });
 }
